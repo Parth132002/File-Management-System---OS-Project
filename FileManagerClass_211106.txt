@@ -1,0 +1,31 @@
+Here is a brief overview of the methods provided by the "FileManager" class:
+- createFile(const char* fileName) : 
+This method creates a new file with the specified 'fileName' in the directory specified by the 'FILE_PATH' constant. It uses the 'CreateFile' Windows API function with the 'GENERIC_WRITE' access mode to create the file with write access.
+
+- readFile(const char* fileName, char* buffer, int bufferSize) : 
+This method reads the contents of the file with the specified 'fileName' into the 'buffer' of size 'bufferSize'. It uses the 'CreateFile' Windows API function with the 'GENERIC_READ' access mode to open the file with read access, and the 'ReadFile' Windows API function to read the contents of the file.
+
+- editFile(const char* fileName, const char* newData, int newSize) : 
+This method edits the contents of the file with the specified 'fileName' by replacing it with the 'newData' of size 'newSize'. It uses the 'CreateFile' Windows API function with the 'GENERIC_WRITE' access mode to open the file with write access, and the WriteFile Windows API function to write the 'newData' to the file.
+
+- deleteFile(const char* fileName) :
+This method deletes the file with the specified 'fileName' from the directory specified by the 'FILE_PATH' constant. It uses the 'DeleteFile' Windows API function to delete the file.
+
+- writeFile(const char* fileName, const char* data, int dataSize) : 
+This method writes the 'data' of size 'dataSize' to a new file with the specified 'fileName' in the directory specified by the 'FILE_PATH' constant. It uses the 'CreateFile' Windows API function with the 'GENERIC_WRITE' access mode and the 'CREATE_ALWAYS' creation disposition to create the file with write access, and the 'WriteFile' Windows API function to write the data to the file.
+
+- renameFile(const char* oldFileName, const char* newFileName) : 
+This method renames the file with the specified 'oldFileName' to the 'newFileName' in the directory specified by the 'FILE_PATH' constant. It uses the 'MoveFile' Windows API function to rename the file.
+
+- findLocationOfFile(const char* fileName, string& filePath) : 
+This method finds the location of the file with the specified 'fileName' in the directory specified by the 'FILE_PATH' constant. It uses the 'FindFirstFile' and 'FindClose' Windows API functions to search for the file and retrieve its file data, and extracts the file path from the file data.
+
+- findSpaceTakenByFile(const char* fileName, unsigned long long& fileSize) : 
+This method finds the size of the file with the specified 'fileName' in bytes. It uses the 'findLocationOfFile' method to get the file path, and then uses the 'GetFileSize' Windows API function to retrieve the file size. The file size is returned in the 'fileSize' parameter as an unsigned long long integer.
+
+Note: Please make sure to update the 'FILE_PATH' constant in the code with the appropriate file path on your system before running the program.
+
+
+
+
+
